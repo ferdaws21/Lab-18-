@@ -16,25 +16,25 @@ private:
 public:
     ReviewList() : head(nullptr), tail(nullptr), count(0) {}
 
-    // Method to add a review at the head
+    
     void addAtHead(float rating, const std::string& comment) {
         Review* newReview = new Review{rating, comment, head};
         head = newReview;
         if (tail == nullptr) {
-            tail = head; // If the list was empty, tail is also the new head
+            tail = head; 
         }
         count++;
     }
 
-    // Method to add a review at the tail
+    
     void addAtTail(float rating, const std::string& comment) {
         Review* newReview = new Review{rating, comment, nullptr};
         if (tail != nullptr) {
-            tail->next = newReview; // Link the new review to the end of the list
+            tail->next = newReview; 
         }
-        tail = newReview; // Update tail to the new review
+        tail = newReview; 
         if (head == nullptr) {
-            head = tail; // If the list was empty, head is also the new tail
+            head = tail; 
         }
         count++;
     }
@@ -86,7 +86,7 @@ int main() {
         std::cout << "Enter review rating 0-5: ";
         std::cin >> rating;
 
-        std::cin.ignore(); // Clear newline from input buffer
+        std::cin.ignore(); 
         std::cout << "Enter review comments: ";
         std::getline(std::cin, comment);
 
